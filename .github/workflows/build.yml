@@ -30,9 +30,12 @@ jobs:
       - name: Build EXE
         run: just build
 
+      - name: Compress Build Directory
+        run: Compress-Archive -Path dist/ss/* -DestinationPath dist/ss.zip
+
       - name: Release Executable
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/ss.exe
+          files: dist/ss.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
