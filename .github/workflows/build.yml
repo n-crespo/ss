@@ -12,10 +12,10 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
@@ -35,7 +35,7 @@ jobs:
             --exclude-module PyQt6.QtSql `
             --exclude-module PyQt6.QtNetwork `
             --exclude-module PyQt6.QtPdf `
-            ss.py
+            src/ss.py
 
       - name: Release Executable
         uses: softprops/action-gh-release@v2
