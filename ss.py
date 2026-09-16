@@ -27,7 +27,7 @@ class SnippingTool(QWidget):
         self.trigger_button = None
 
     def mousePressEvent(self, event):
-        if event.button() in (Qt.MouseButton.LeftButton, Qt.MouseButton.LeftButton):
+        if event.button() in (Qt.MouseButton.LeftButton, Qt.MouseButton.RightButton):
             self.trigger_button = event.button()
             self.start_point = event.pos()
             self.end_point = event.pos()
