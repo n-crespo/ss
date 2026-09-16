@@ -13,4 +13,4 @@ build:
 
 # Clean build artifacts
 clean:
-    Remove-Item -Recurse -Force build, dist -ErrorAction SilentlyContinue
+    rm -rf build dist
