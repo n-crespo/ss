@@ -27,7 +27,7 @@ class SnippingTool(QWidget):
         self.trigger_button = None
 
     def mousePressEvent(self, event):
-        if event.button() in (Qt.MouseButton.LeftButton, Qt.MouseButton.RightButton):
+        if event.button() in (Qt.MouseButton.LeftButton, Qt.MouseButton.LeftButton):
             self.trigger_button = event.button()
             self.start_point = event.pos()
             self.end_point = event.pos()
@@ -47,7 +47,7 @@ class SnippingTool(QWidget):
                 pixmap = self.grab_selection()
                 QGuiApplication.clipboard().setPixmap(pixmap)
 
-                if self.trigger_button == Qt.MouseButton.LeftButton:
+                if self.trigger_button == Qt.MouseButton.RightButton:
                     downloads_dir = Path.home() / "Downloads"
                     date_str = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
                     pixmap.save(
